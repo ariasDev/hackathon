@@ -37,3 +37,15 @@ exports.deleteFactura = async (req, res, next) => {
 
 }
 
+exports.updateFactura = async (req, res, next) => {
+    try {
+        let updated = await facturasService.updateFactura(req.body)
+        if(!updated){
+            throw 'la factura no existe'
+        }
+        res.status(200).json({"response": 'factura actualizada'})
+    } catch (error) {
+        res.status(404).json({"reject": error})
+    }
+}
+

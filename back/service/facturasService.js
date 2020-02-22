@@ -28,7 +28,12 @@ exports.registarFactura = async (body) => {
 
 }
 
-
 exports.deleteFactura = async (id) => {
     return await facturasSchema.deleteOne({idFactura : id})
+}
+
+exports.updateFactura = async (body) => {
+    const filter = {idFactura: body.idFactura };
+    const update = {productos: body.productos};
+    return await facturasSchema.findOneAndUpdate(filter, update);
 }
