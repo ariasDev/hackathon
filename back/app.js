@@ -15,7 +15,7 @@ const indexRoutes = require('./routes/indexRoutes')
 app.set('port', process.env.PORT);
 console.log(process.env.PORT)
 
-app.use(cors())
+
 app.use(express.urlencoded({ extended: false }))
 
 //To support Json params
