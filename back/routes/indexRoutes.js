@@ -6,7 +6,8 @@ const bodegasController = require('../controller/bodegasController')
 
 router.get("/prueba", productsController.prueba);
 router.get("/getBodegas", bodegasController.getBodegas);
-router.put("/updateBodega", bodegasController.updateProductList)
+router.get("/getOneBodega/:idBodega", bodegasController.getOneBodega)
+router.put("/updateBodega", bodegasController.updateProductList);
 
 
 module.exports = router;

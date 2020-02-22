@@ -23,3 +23,15 @@ exports.updateProductList = async(req, res, next) => {
         res.status(404).json({"reject": error})
     }
 }
+
+exports.getOneBodega = async(req, res, next) =>{
+    try {
+        const bodega = await bodegasService.getOneBodega(req.params.idBodega);
+        if(bodega.length === 0){
+            throw 'Not Found'
+        }
+        res.status(200).json({"data": bodega})
+    } catch(error) {
+        res.status(404).json({"reject": error})
+    }
+}

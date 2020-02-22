@@ -16,3 +16,7 @@ exports.updateProducts = async (body) => {
     const update = {productos: body.productos};
     return await bodegasSchema.findOneAndUpdate(filter, update);
 }
+
+exports.getOneBodega = async (id) => {
+    return await bodegasSchema.find({idBodega: id})
+}
