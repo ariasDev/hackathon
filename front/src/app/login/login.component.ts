@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-// import { FormBuilder} from '@angular/forms';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { User } from '../models/users';
 
 @Component({
@@ -11,13 +11,21 @@ export class LoginComponent implements OnInit {
 
   public user: User;
   pswd: string;
+  loginForm;
 
   constructor(
-    // private formB: FormBuilder
+    private fb: FormBuilder
   ) { }
 
   ngOnInit() {
+    this.createForm();
 
   }
 
+  createForm() {
+    this.loginForm = this.fb.group({
+      email: ['', [Validators.required, Validators.email]],
+      password: ['', [Validators.required, Validators.minLength(9), Validators.maxLength(30)]]
+    });
+  }
 }
