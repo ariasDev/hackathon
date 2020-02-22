@@ -1,6 +1,6 @@
 const facturasService = require('../service/facturasService')
 
-exports.getFacturas = async(req, res, next) => {
+exports.getFacturas = async (req, res, next) => {
     try {
         let facturas = await facturasService.getFacturas()
         if(facturas.length === 0){
@@ -25,6 +25,15 @@ exports.registarFactura = async (req, res, next) => {
 }
 
 exports.deleteFactura = async (req, res, next) => {
+    try {
+        let deleted = await facturasService.deleteFactura(req.params.id)
+        if(deleted.deletedCount === 0){
+            throw 'la factura no exite'
+        }
+        res.status(200).json({"data": 'Factura eliminada'})
+    } catch (error) {
+        res.status(404).json({"reject": error})
+    }
 
 }
 

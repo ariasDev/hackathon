@@ -1,6 +1,6 @@
-const express = require("express"),
-    router = express.Router(),
-    productsController = require('../controller/collaborator');
+const express = require("express");
+const router = express.Router();
+const productsController = require('../controller/collaborator');
 
 const bodegasController = require('../controller/bodegasController');
 const facturasController = require('../controller/facturasController');
@@ -15,7 +15,7 @@ router.put("/updateBodega", bodegasController.updateProductList);
 
 router.get('/getFacturas', facturasController.getFacturas);
 router.post('/postFactura', facturasController.registarFactura)
-router.delete('/deleteFactura', facturasController.deleteFactura)
+router.delete('/deleteFactura/:id', facturasController.deleteFactura)
 
 
 module.exports = router;

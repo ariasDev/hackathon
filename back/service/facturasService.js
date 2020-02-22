@@ -1,6 +1,6 @@
 const facturasSchema = require('../schemas/facturasSchema')
 
-exports.getFacturas = async() => {
+exports.getFacturas = async () => {
     return await facturasSchema.find({})
     .then(resolve => {
         return resolve
@@ -10,7 +10,7 @@ exports.getFacturas = async() => {
     })
 }
 
-exports.registarFactura = async(body) => {
+exports.registarFactura = async (body) => {
     const facturaToSave = new facturasSchema({
         idFactura: body.idFactura,
         fecha: body.fecha,
@@ -26,4 +26,9 @@ exports.registarFactura = async(body) => {
         return false
     })
 
+}
+
+
+exports.deleteFactura = async (id) => {
+    return await facturasSchema.deleteOne({idFactura : id})
 }
