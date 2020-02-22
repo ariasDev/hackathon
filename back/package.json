@@ -1,0 +1,28 @@
+{
+  "name": "hackathon-back",
+  "version": "1.0.0",
+  "description": "hola pai",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon app"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ariasDev/hackathon-back.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ariasDev/hackathon-back/issues"
+  },
+  "homepage": "https://github.com/ariasDev/hackathon-back#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}
