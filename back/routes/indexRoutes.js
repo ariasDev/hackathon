@@ -2,13 +2,20 @@ const express = require("express"),
     router = express.Router(),
     productsController = require('../controller/collaborator');
 
-const bodegasController = require('../controller/bodegasController')
+const bodegasController = require('../controller/bodegasController');
+const facturasController = require('../controller/facturasController');
 
 router.get("/prueba", productsController.prueba);
+
 router.get("/getBodegas", bodegasController.getBodegas);
 router.get("/getOneBodega/:idBodega", bodegasController.getOneBodega)
 router.post("/consultProduct", bodegasController.consultProduct)
 router.put("/updateBodega", bodegasController.updateProductList);
+
+
+router.get('/getFacturas', facturasController.getFacturas);
+router.post('/postFactura', facturasController.registarFactura)
+router.delete('/deleteFactura', facturasController.deleteFactura)
 
 
 module.exports = router;
