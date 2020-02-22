@@ -10,7 +10,6 @@ exports.getBodegas = async () => {
     })
 }
 
-
 exports.updateProducts = async (body) => {
     const filter = { idBodega: body.idBodega };
     const update = {productos: body.productos};

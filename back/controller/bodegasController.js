@@ -51,6 +51,8 @@ exports.consultProduct = async(req, res, next) =>{
     }
 }
 
+//-----------------------------------------------------------
+
 const productExist = (bodega, idProduct) =>{
     let productList = bodega[0].productos;
     for (let index = 0; index < productList.length; index++) {
