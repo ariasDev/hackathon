@@ -5,7 +5,8 @@ const express = require("express"),
 const bodegasController = require('../controller/bodegasController')
 
 router.get("/prueba", productsController.prueba);
-router.get("/getBodegas", bodegasController.getWarehouses);
+router.get("/getBodegas", bodegasController.getBodegas);
+router.put("/updateBodega", bodegasController.updateProductList)
 
 
 module.exports = router;
