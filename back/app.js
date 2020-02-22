@@ -2,6 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const dotenv = require('dotenv');
 const bodyParser = require('body-parser')
+const mongoConnection = require('./dbConnection/mongoDbConnection')
 
 
 const app = express();
@@ -30,5 +31,7 @@ app.use('/', indexRoutes);
 app.listen(app.get('port'), () => {
     console.log(`server on port ${app.get('port')}`);
 });
+
+mongoConnection.conect()
 
 module.exports = app;
