@@ -6,7 +6,7 @@ export class ProductListItem extends Product {
     public amount: number;
 
     constructor({ ...props }) {
-        super(props.product || null);
+        super(props.product || {});
         this.amount = props.amount || null;
     }
 }

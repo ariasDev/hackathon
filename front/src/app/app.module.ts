@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { BodegaServiceService } from './services/bodega-service.service';
+import { HttpClientModule } from '@angular/common/http';
 import {
   MatButtonModule,
   MatCheckboxModule,
@@ -29,18 +31,21 @@ import {
   MatPaginatorModule,
   MatSortModule,
   MatExpansionModule,
-  MatProgressSpinnerModule
+  MatProgressSpinnerModule,
+  MatAutocompleteModule
 } from '@angular/material';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { LoginComponent } from './login/login.component';
+import { StoreComponent } from './store/store.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    StoreComponent,
   ],
   imports: [
     BrowserModule,
@@ -76,7 +81,9 @@ import { LoginComponent } from './login/login.component';
     MatPaginatorModule,
     MatSortModule,
     MatExpansionModule,
-    MatProgressSpinnerModule
+    MatProgressSpinnerModule,
+    HttpClientModule,
+    MatAutocompleteModule
   ],
   exports: [
     FormsModule,
@@ -112,7 +119,7 @@ import { LoginComponent } from './login/login.component';
     MatExpansionModule,
     MatProgressSpinnerModule
   ],
-  providers: [],
+  providers: [BodegaServiceService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

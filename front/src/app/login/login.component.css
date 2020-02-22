@@ -1,6 +1,4 @@
-
-
 .background {
-    background: linear-gradient(rgba(255, 255, 255, 0.59), rgba(255, 255, 255, 0.59)), url('../../assets/business-1845350_1920.jpg');
+    background: linear-gradient(rgba(255, 255, 255, 0.59), rgba(255, 255, 255, 0.59)), url('../../assets/ship-56569_1920.jpg');
     min-height: 100vh;
 }
